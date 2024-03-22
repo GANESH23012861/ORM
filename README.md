@@ -6,7 +6,8 @@ To develop a Django application to store and retrieve data from a Book database 
 
 ## Entity Relationship Diagram
 
-Include your ER diagram here
+![image](https://github.com/GANESH23012861/ORM/assets/147139861/713726c7-0380-44b2-ab94-bbe62a7f8eca)
+
 
 ## DESIGN STEPS
 
