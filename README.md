@@ -1,50 +1,60 @@
-# Ex02 Django ORM Web Application
-## Date: 
-
+## Ex02 Django ORM Web Application
+## Date: 15/03/2024
 ## AIM
 To develop a Django application to store and retrieve data from a Book database using Object Relational Mapping(ORM).
 
 ## Entity Relationship Diagram
 
-![image](https://github.com/GANESH23012861/ORM/assets/147139861/713726c7-0380-44b2-ab94-bbe62a7f8eca)
-
-
+![entity relationship-1](https://github.com/Henriprasath/ORM/assets/144979077/38582397-61f3-44d7-ba5f-652d496fdfce)
+ 
 ## DESIGN STEPS
-
-### STEP 1:
+## STEP 1:
 Clone the problem from GitHub
 
-### STEP 2:
+## STEP 2:
 Create a new app in Django project
 
-### STEP 3:
+## STEP 3:
 Enter the code for admin.py and models.py
 
-### STEP 4:
+## STEP 4:
 Execute Django admin and create details for 10 books
 
 ## PROGRAM
-
-admin.py
-from django.contrib import admin
-from .models import student,studentAdmin
-admin.site.register(student,studentAdmin)
-
-models.py
+## models.py:
 from django.db import models
+
 from django.contrib import admin
-class student (models.Model):
-    name=models.CharField(max_length=20,help_text="student")
-    rollno=models.IntegerField()
-    refno=models.IntegerField()
-    age=models.IntegerField()
-    email=models.EmailField()
-class studentAdmin(admin.ModelAdmin):
-    list_display=('name','rollno','refno','age','email')
 
-## OUTPUT
+class Book_DB(models.Model):
 
-![image](https://github.com/GANESH23012861/ORM/assets/147139861/283d751d-e2a3-49e4-a681-664f8b565dc5)
+      sno=models.IntegerField(primary_key="sno");
+      
+      name=models.CharField(max_length=50);
+      
+      author=models.CharField(max_length=70);
+      
+      price=models.IntegerField();
+      
+      publisher=models.CharField(max_length=60);
+
+
+class Book_DBAdmin(admin.ModelAdmin)
+
+    list_display=("sno","name","author","price","publisher");
+ 
+## admin.py:
+from django.contrib import admin
+
+from .models import Book_DB,Book_DBAdmin
+
+admin.site.register(Book_DB,Book_DBAdmin)
+## OUTPUT:
+
+## OUTPUT:
+
+![Screenshot 2024-05-06 090514](https://github.com/GANESH23012861/ORM/assets/147139861/1d435113-7ec2-4918-83c9-1ed803bcaa89)
+
 
 ## RESULT
-Thus the program for creating a database using ORM hass been executed successfully
+Thus the program for creating a database using ORM hass been executed successful
